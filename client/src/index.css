@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased text-slate-800 bg-[#F8FAFC];
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  /* Custom Slim Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+}
+
+@layer components {
+  /* Industrial Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center font-medium py-2 px-4 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition-all duration-150 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center font-medium py-2 px-4 rounded-lg bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 shadow-sm transition-all duration-150 active:scale-[0.98];
+  }
+  .btn-danger {
+    @apply inline-flex items-center justify-center font-medium py-2 px-4 rounded-lg bg-rose-600 hover:bg-rose-700 text-white shadow-sm transition-all duration-150 active:scale-[0.98];
+  }
+
+  /* Enterprise Cards */
+  .card {
+    @apply bg-white rounded-xl shadow-[0_1px_3px_rgba(0,0,0,0.04)] border border-slate-200/80 p-6 transition-all duration-200 hover:border-slate-300;
+  }
+
+  .card-telemetry {
+    @apply bg-white rounded-xl shadow-sm border border-slate-200/90 p-5 relative overflow-hidden;
+  }
+
+  /* Form Inputs */
+  .input-field {
+    @apply w-full px-3.5 py-2 text-sm text-slate-900 bg-white border border-slate-200 rounded-lg focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 outline-none transition-all duration-150 placeholder:text-slate-400;
+  }
+  .select-field {
+    @apply w-full px-3.5 py-2 text-sm text-slate-900 bg-white border border-slate-200 rounded-lg focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 outline-none transition-all duration-150;
+  }
+
+  /* Telemetry Badges */
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-medium font-mono tracking-tight;
+  }
+  .badge-success {
+    @apply badge bg-emerald-50 text-emerald-700 border border-emerald-200;
+  }
+  .badge-warning {
+    @apply badge bg-amber-50 text-amber-700 border border-amber-200;
+  }
+  .badge-danger {
+    @apply badge bg-rose-50 text-rose-700 border border-rose-200;
+  }
+  .badge-info {
+    @apply badge bg-sky-50 text-sky-700 border border-sky-200;
+  }
+  .badge-gray {
+    @apply badge bg-slate-100 text-slate-700 border border-slate-200;
+  }
+}

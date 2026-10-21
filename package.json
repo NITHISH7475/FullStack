@@ -1,0 +1,21 @@
+{
+  "name": "foodflow-ai",
+  "version": "1.0.0",
+  "description": "AI-Driven Food Manufacturing Supply Chain & Waste-Reduction Platform",
+  "scripts": {
+    "install:server": "cd server && npm install",
+    "install:client": "cd client && npm install",
+    "install:all": "npm run install:server && npm run install:client",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "start": "concurrently \"cd server && npm start\" \"cd client && npm run preview\"",
+    "build": "cd client && npm run build",
+    "seed": "cd server && npm run seed",
+    "test": "cd server && npm test",
+    "kill:port": "powershell -Command \"Get-NetTCPConnection -LocalPort 5000 -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
